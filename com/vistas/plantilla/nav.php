@@ -12,7 +12,7 @@
         <li><a href="../../mantenimientos/map/gmap.php"><i class="fa fa-globe"></i><span>Mapa</span> </a> </li>
         <li><a href="../../mantenimientos/xlsx/recepcion.php"><i class="fa fa-list-alt"></i><span>Reporte</span> </a></li>
         <li><a href="../../mantenimientos/usuario/usuarios.php"><i class="fa fa-users"></i><span>Usuarios</span> </a> </li>
-        <li><a href="shortcodes.html"><i class="fa fa-code"></i><span>Shortcodes</span> </a> </li>
+        <li><a href="../../mantenimientos/modulos/modulos.php"><i class="fa fa-sitemap"></i><span>Módulos</span> </a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right"> 
           <li class="dropdown" ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">

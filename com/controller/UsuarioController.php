@@ -114,7 +114,25 @@
 	        $listaUsuario = $usuarioDAO->obtenerPorId($usuarioBean);
 	        echo json_encode($listaUsuario);
 	        break;
+        case 7:
+        	$txtNomUsu = $_POST["txtNomUsu"];
+	        $txtNom = $_POST["txtNom"];
+	        $apePat = $_POST["apePat"];
+	        $apeMat = $_POST["apeMat"];
 
+	        //Instancia de Persona
+	        $personaBean = new PersonaBean();
+	        $personaBean->setNombre($txtNom);
+	        $personaBean->setApePat($apePat);
+	        $personaBean->setApeMat($apeMat);
+
+	        //Instancia de Usuario
+	        $usuarioBean = new UsuarioBean();
+	        $usuarioBean->setUsuario($txtNomUsu);
+	       
+	        $listaUsuario = $usuarioDAO->filtrarUsuario($personaBean, $usuarioBean);
+        	echo json_encode($listaUsuario);
+        	break;
 	}
 
 ?>

@@ -2,6 +2,7 @@
 
 	require_once '../util/Conexion.php';
 	require_once '../bean/UsuarioBean.php';
+	require_once '../bean/PersonaBean.php';
 
 	class UsuarioDAO{
 		public function validarUsuario(UsuarioBean $usuarioBean){
@@ -144,7 +145,7 @@
 	        return $idPersona;
 	    }
 
-	     public function eliminarUsuario(UsuarioBean $usuarioBean) {
+	    public function eliminarUsuario(UsuarioBean $usuarioBean) {
 	        try {
 	            $res = 0;
 	            $sql = "DELETE from usuario where idusuario = '$usuarioBean->idUsuario'";
@@ -156,6 +157,42 @@
 	            echo $exc->getTraceAsString();
 	        }
 	        echo $res;
+	    }
+
+	    public function filtrarUsuario(PersonaBean $personaBean, UsuarioBean $usuarioBean) {
+	        try {
+	            $miArray = "";
+	            $sql = "SELECT u.idusuario,u.usuario,p.nombre,p.apePat,p.apeMat,u.estado,
+	            		(case when u.estado = 1 then 'Activo' else 'Inactivo' end) as datoEstado,
+	            		concat(p.nombre,' ',p.apepat,' ',p.apemat) as nombreCompleto 
+	            		FROM usuario u 
+	                    left join persona p on p.idpersona = u.idpersona 
+	                    where 
+	                    u.estado = 1 and 
+	                    upper(p.nombre) like concat('%','$personaBean->nombre','%') and
+	                    upper(p.apePat) like concat('%','$personaBean->apePat','%') and
+	                    upper(p.apeMat) like concat('%','$personaBean->apeMat','%') and
+	                    upper(u.usuario) like concat('%','$usuarioBean->usuario','%')";
+	            $conexion = new Conexion();
+	            $cn = $conexion->Conectarse();
+	            $usuario = mysql_query($sql, $cn);
+	            $miArray = array();
+	            while ($user = mysql_fetch_array($usuario)) {
+	                $miArray[] = array(
+	                    'idusuario' => $user['idusuario'],
+	                    'usuario' => $user['usuario'],
+	                    'nombre' => $user['nombre'],
+	                    'apePat' => $user['apePat'],
+	                    'apeMat' => $user['apeMat'],
+	                    'estado' => $user['estado'],
+	                    'datoEstado' => $user['datoEstado'],
+	                    'nombreCompleto' => $user['nombreCompleto']
+	                );
+	            }
+	        } catch (Exception $exc) {
+	            echo $exc->getTraceAsString();
+	        }
+	        return $miArray;
 	    }
 
 	}

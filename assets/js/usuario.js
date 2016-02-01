@@ -313,31 +313,33 @@ function registrarUsuario() {
 function eliminarUsuario(idusuario) {
     var op = 4;
     var respuesta = "";
-    var flg = confirm("Seguro desea eliminar?");
-    if (flg) {
-        $.ajax({
-            type: "POST",
-            data: {
-                op: op,
-                idusuario: idusuario
-            },
-            url: "../../../controller/UsuarioController.php",
-            success: function (msg) {
-                console.log(msg);
-                var n = parseInt(msg);
-                if (n == 11) {
-                    obtenerUsuario();
-                    respuesta = obtenerAlert("Operación realizada con éxito");
-                    $("#response").html(respuesta);
-                }else{
-                    respuesta = obtenerAlert("Ha ocurrido un Error");
-                    $("#response").html(respuesta);
+    //var flg = confirm("Seguro desea eliminar?");
+    bootbox.confirm("Seguro desea eliminar?", function(flg) {
+        if (flg) {
+            $.ajax({
+                type: "POST",
+                data: {
+                    op: op,
+                    idusuario: idusuario
+                },
+                url: "../../../controller/UsuarioController.php",
+                success: function (msg) {
+                    console.log(msg);
+                    var n = parseInt(msg);
+                    if (n == 11) {
+                        obtenerUsuario();
+                        respuesta = obtenerAlert("Operación realizada con éxito");
+                        $("#response").html(respuesta);
+                    }else{
+                        respuesta = obtenerAlert("Ha ocurrido un Error");
+                        $("#response").html(respuesta);
+                    }
                 }
-            }
-        });
-    } else {
-        obtenerUsuario();
-    } 
+            });
+        } else {
+            obtenerUsuario();
+        }
+    }); 
 }
 
 function limpiarUsuario() {
@@ -351,4 +353,67 @@ function limpiarUsuario() {
     $("#txtNDoc").val("");
     $("#txtIdDocumento").val(0);
     $("#txtIdSexo").val(0);
+}
+
+function filtrarUsuario(){
+    var op = 7;
+    var txtNomUsu = $("#txtNomUsu").val();
+    var txtNom = $("#txtNom").val();
+    var apePat = $("#txtApePat").val();
+    var apeMat = $("#txtApeMat").val();
+
+    $.ajax({
+        type: "POST",
+        data: {
+            op: op,
+            txtNomUsu: txtNomUsu,
+            txtNom: txtNom,
+            apePat: apePat,
+            apeMat: apeMat
+        },
+        url: "../../../controller/UsuarioController.php",
+        success: function (msg) {
+            console.log(msg);
+            var usuario = JSON.parse(msg);
+            if (usuario.length != 0) {
+                var html = "";
+                html += '<table id="myTable" class="table table-striped table-bordered table-hover" style="background-color:white">';
+                html += '<thead>';
+                    html += '<tr>';
+                        html += '<th>Usuario</th>';
+                        html += '<th>Nombre Completo</th>';
+                        html += '<th>Estado</th>';
+                        html += "<th colspan='3' class='textCenter' style='width:50px;'><center>Acciones</center></th>";
+                    html += '</tr>';
+                html += '</thead>';
+                html += '<tbody class="bodyTable">';
+                for (var i = 0; i < usuario.length; i++) {
+                    html += '<tr>';
+                        html += '<td>' + usuario[i].usuario + '</td>';
+                        html += '<td>' + usuario[i].nombreCompleto + '</td>';
+                        html += '<td><center>' + usuario[i].datoEstado + '</center></td>';
+                        html += '<td><center><a href="#" data-toggle="tooltip" title="Editar" onclick="obtenerUsuarioId(' + usuario[i].idusuario + ')" ><img src="../../../../assets/img/edit.gif" style="width:15px;"></a></center></td>';
+                        html += '<td><center><a href="#" data-toggle="tooltip" title="Eliminar" onclick="eliminarUsuario(' + usuario[i].idusuario + ')" ><img src="../../../../assets/img/cancelar.png" style="width:15px;"></a></center></td>';
+                        html += '<td><center><a href="#" data-toggle="tooltip" title="Asignar Perfil" onclick="asignarPerfil(' + usuario[i].idusuario + ',1)" ><i class="fa fa-user-plus"></i></a></center></td>';
+                    html += '</tr>';
+                }
+                html += '</tbody>';
+                html += '</table>';
+                $("#tableUsuario").html(html);
+                $("#txtNomUsu").val("");
+                $("#txtNom").val("");
+                $("#txtApePat").val("");
+                $("#txtApeMat").val("");
+            } else {
+                var res = obtenerAlert("No se encontraron datos...");
+                $("#response").html(res);
+                $("#tableUsuario").html("");
+                $("#txtNomUsu").val("");
+                $("#txtNom").val("");
+                $("#txtApePat").val("");
+                $("#txtApeMat").val("");
+            }
+        }
+    });
+
 }

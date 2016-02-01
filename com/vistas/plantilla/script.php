@@ -5,6 +5,9 @@
 <script type="text/javascript" src="../../../../assets/js/bootstrap-filestyle.min.js" ></script>
 
 <script type="text/javascript" src="../../../../assets/js/jquery.bootstrap-duallistbox.js" ></script>
+<script type="text/javascript" src="../../../../assets/js/bootstrap-checkbox.js" ></script>
+<script type="text/javascript" src="../../../../assets/js/bootbox.min.js" ></script>
+
 
 <script type="text/javascript" src="../../../../assets/js/gmap.js"></script>
 <script type="text/javascript" src="../../../../assets/js/distrito.js"></script>
