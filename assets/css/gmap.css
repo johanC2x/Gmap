@@ -69,3 +69,7 @@
 .input-max{
   width: 250px;
 }
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}

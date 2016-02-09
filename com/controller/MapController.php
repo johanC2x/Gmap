@@ -50,6 +50,19 @@
 			$res = $mapDAO->actualizarRuta($mapBean);
 			echo $res;
 		break;
+		case 7:
+			$idMap = $_POST["idMap"];
+			$root = $_POST["root"];
+			$mapBean->setIdMap($idMap);
+			$val = unlink($root);
+			$res = "";
+			if($val==true){
+				$res = $mapDAO->eliminarArchivoMap($mapBean);
+			}else{
+				$res = "0";
+			}
+			echo $res;
+			break;
 	}
 
 ?>

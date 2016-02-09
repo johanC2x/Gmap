@@ -152,6 +152,20 @@
 			return $res;
 		}
 
+		public function eliminarArchivoMap(MapBean $mapBean){
+			try {
+				$res = "";
+				$sql = "UPDATE map set ruta = null WHERE idMap = '$mapBean->idMap'";
+				$conexion = new Conexion();
+	            $cn = $conexion->Conectarse();
+	            $map = mysql_query($sql, $cn);
+	            $res = "1";
+			} catch (Exception $exc) {
+				echo $exc->getTraceAsString();
+			}
+			return $res;
+		}
+
 	}
 
 ?>

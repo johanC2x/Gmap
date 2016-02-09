@@ -118,7 +118,6 @@ function showAddress(address) {
       }
     );
   }
-
 }
 
 function obtenerMapaDistrito(obj) {
@@ -158,6 +157,7 @@ function obtenerMapaDistrito(obj) {
 
 function obtenerAsigDistrito(distrito){
   var op = 3;
+  var root = "../../";
   dis = distrito;
   obj = "map";
   title = "Número de Asignaciones";
@@ -179,7 +179,7 @@ function obtenerAsigDistrito(distrito){
             html += "<th class='tr-center'>Cliente</th>";
             html += "<th class='tr-center'>Direccion</th>";
             html += "<th class='tr-center'>Distrito</th>";
-            html += "<th class='tr-center' colspan='2'>Acción</th>";
+            html += "<th class='tr-center' colspan='3'>Acción</th>";
           html += "</tr>";
         html += "</thead>";
         html += "<tbody class='bodyTable'>";
@@ -191,11 +191,12 @@ function obtenerAsigDistrito(distrito){
               html += "<td class='font-min'>"+mapa[i].distrito+"</td>";
               html += "<td style='width:30px;'><a href='#' data-toggle='tooltip' title='Seleccionar' onclick='obtenerDistritoAddress("+mapa[i].idMap+")'><center><img src='../../../../assets/img/select3.png' style='width:15px;'/></center></a></td>";
               if(mapa[i].flgRuta == 1){
-                var root = "../../";
                 html += "<td class='font-min'><a href="+root.concat('',mapa[i].ruta)+" target='_blank' data-toggle='tooltip' title='Descargar'><center>"+"<img src='../../../../assets/img/download.png' style='width:15px;'/>"+"</center></a></td>";
+                html += "<td class='font-min'><center><a href='#' onclick='eliminarArchivoMap(\""+mapa[i].ruta+"\","+mapa[i].idMap+")' data-toggle='tooltip' title='Eliminar archivo'><i class='fa fa-trash'></i></a></center></td>";
               }else{
                 if (mapa[i].flgRuta == 0){
                   html += "<td class='font-min'><a href='#' data-toggle='tooltip' title='Subir' onclick='subir(\""+obj+"\","+mapa[i].idMap+")'><center>"+"<img src='../../../../assets/img/upload.png' style='width:15px;'/>"+"</center></a></td>";
+                  html += "<td class='font-min'><a href='#' class='disable' data-toggle='tooltip' title='Sin archivo'><i class='fa fa-ban'></i></a></td>";
                 }
               }
             html += "</tr>";
@@ -309,6 +310,31 @@ function subirArchivo(idMap,obj){
     }
   });
 }  
+
+function eliminarArchivoMap(root,idMap){
+  var op = 7;
+  $.ajax({
+    type:"POST",
+    data:{
+      op:op,
+      idMap:idMap,
+      root:root
+    },
+    url:"../../../controller/MapController.php",
+    success:function(msg){
+      console.log(msg);
+      if(msg == "1"){
+        obtenerAsigDistrito(dis);
+        $("#"+obj).modal("hide");
+      }else{
+        if(msg == "0"){
+          var msg = obtenerAlert("Ha ocurrido un error por favor verifique");
+          $("#msg").html(msg);
+        }
+      }
+    }
+  });
+}
 
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-02-2016 a las 02:34:34
+-- Tiempo de generación: 09-02-2016 a las 04:38:57
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.31
 
@@ -270,7 +270,7 @@ INSERT INTO `map` (`idMap`, `solicitud`, `actividad`, `nombreContratista`, `clie
 (130, '1447941.0', 'Conexiones', 'OBJ', 'QUIÑONEZ CAPARACHIN PABLO LUMBARTE', 'MZ E LT 03 ASOC DE PROG DE VIV SOL DE LAS VIÑ', 'Ate-Vitarte', 'JUAN CACHAY', 'Victor Vasquez Hidalgo', '06-nov-2015', 'NOVIEMBRE', NULL),
 (131, '1452406.0', 'Conexiones', 'OBJ', 'TOCTO FERNANDEZ DE CASTRO NEOBEL', 'MZ E LT 7 URB RESIDENCIAL CASA BLANCA', 'Santiago De Surco', 'JUAN CACHAY', 'Piero Amador Salazar', '05-nov-2015', 'NOVIEMBRE', NULL),
 (132, '1449301.0', 'Conexiones', 'OBJ', 'FONSECA ESPINOZA FLORENCIO VICTOR', 'MZ 69 LT 12 URB PARCELACION SEMIRUSTICA- CIEN', 'Cieneguilla', 'JUAN CACHAY', 'Victor Vasquez Hidalgo', '05-nov-2015', 'NOVIEMBRE', NULL),
-(133, '1449016.0', 'Conexiones', 'OBJ', 'CRUZ RAMIREZ EUMELIO', 'MZ X LT 3 ANEXO 9 DE OCTUBRE', 'Asia', 'JUAN CACHAY', 'CMLO', '05-nov-2015', 'NOVIEMBRE', '../../images/bases_de_datos_nosql_mongodb.pdf'),
+(133, '1449016.0', 'Conexiones', 'OBJ', 'CRUZ RAMIREZ EUMELIO', 'MZ X LT 3 ANEXO 9 DE OCTUBRE', 'Asia', 'JUAN CACHAY', 'CMLO', '05-nov-2015', 'NOVIEMBRE', NULL),
 (134, '1444364.0', 'Conexiones', 'OBJ', 'ALTAMIRANO MOGOLLON DE LOZADA MARIA LUZ', 'MZ D'' LT 09 BAR 2 SECTOR II AGR PACHACAMAC IV', 'Villa El Salvador', 'JUAN CACHAY', 'CMLO', '05-nov-2015', 'NOVIEMBRE', NULL),
 (135, '1443611.0', 'Conexiones', 'OBJ', 'LLANOS GUEVARA ELIZABET', 'MZ E LT 13 URB RESIDENCIAL CASA BLANCA', 'Santiago De Surco', 'JUAN CACHAY', 'Piero Amador Salazar', '05-nov-2015', 'NOVIEMBRE', NULL),
 (136, '1451930.0', 'Conexiones', 'OBJ', 'RIOS CRISTOBAL RICARDO ISMAEL', 'CL 2 MZ A LT 19 URB HARAS DE HUAMPANI', 'Lurigancho-Chosica', 'JUAN CACHAY', 'Victor Vasquez Hidalgo', '05-nov-2015', 'NOVIEMBRE', NULL),
@@ -311,7 +311,7 @@ INSERT INTO `map` (`idMap`, `solicitud`, `actividad`, `nombreContratista`, `clie
 (171, '1421403.0', 'Proyectos MT', 'SERMESA', 'MG INGENIEROS EIRL', 'AV LAS GAVIOTAS 158 URB LA CAMPIÑA', 'Chorrillos', 'JUAN GARRIAZO', 'Juan Soriano Pozo', '23-sep-2015', 'SEPTIEMBRE', NULL),
 (172, '1401162.0', 'Proyectos BT', 'LO SA VIAL', 'PADILLA LEON VDA DE REQUENA PAULINA DELIA', 'MZ E LT 40 PS 1 ASOC PRO- VIV. FORTALEZA DE V', 'Ate-Vitarte', 'JUAN GARRIAZO', 'Henry Leon Flores', '21-oct-2015', 'OCTUBRE', NULL),
 (173, '1412609.0', 'Proyectos Especiales', 'GCI', 'PEZET 561 S.A.C', 'AV JUAN PEZET 561 URB SAN GABRIEL', 'San Isidro', 'JUAN GARRIAZO', 'Franscisco Moreno Lopez', '29-sep-2015', 'SEPTIEMBRE', NULL),
-(174, '1369774.0', 'Proyectos MT', 'SERMESA', 'EXPORTACIONES RODIMAC S.A.C', 'MZ F LT 02 PARCEL SEMI RUSTICA PAPA LEON XIII', 'Chilca', 'JUAN GARRIAZO', 'Jose Paredes Sotelo', '13-oct-2015', 'OCTUBRE', '../../images/bases_de_datos_nosql_mongodb_toc.pdf'),
+(174, '1369774.0', 'Proyectos MT', 'SERMESA', 'EXPORTACIONES RODIMAC S.A.C', 'MZ F LT 02 PARCEL SEMI RUSTICA PAPA LEON XIII', 'Chilca', 'JUAN GARRIAZO', 'Jose Paredes Sotelo', '13-oct-2015', 'OCTUBRE', NULL),
 (175, '1403580.0', 'Conexiones', 'JORIBA', 'QUISPE QUISPE FELIX', 'MZ I LT 8 GRUPO 16 PARCEL II PRQIND VILLA EL', 'Villa El Salvador', 'JUAN GARRIAZO', 'Freddy Hernandez Lopez', '29-sep-2015', 'SEPTIEMBRE', NULL),
 (176, '1399631.0', 'Conexiones', 'OBJ', 'CHAVEZ BARAHONA ANA', 'MZ A LT 1 SECTOR 5 AH HEROES DE SAN JUAN', 'San Juan De Miraflores', 'JUAN GARRIAZO', 'CMLO', '29-sep-2015', 'SEPTIEMBRE', NULL),
 (177, '1395802.0', 'Mantenimiento MT', 'PRODIEL', 'RENOVACION DE RED MT Y MANTENIMIENTO', 'HUERTOS DE VILLENA LURIN', 'Lurin', 'LUIS TORRES', 'Jorge Arteaga Melendez', '02-nov-2015', 'NOVIEMBRE', NULL),
@@ -321,7 +321,7 @@ INSERT INTO `map` (`idMap`, `solicitud`, `actividad`, `nombreContratista`, `clie
 (181, '1416418.0', 'Proyectos MT', 'PLM', 'SOBRECARGA EN LA LLAVE 2 DE LA SED 00589S', 'JR RIO CHIRA URB LA VIÑA', 'San Luis', 'OSCAR VASQUEZ', 'Jesus Contreras Estela', '08-sep-2015', 'SEPTIEMBRE', NULL),
 (182, '1401140.0', 'Proyectos MT', 'OBJ', 'ASOCIACION IGLESIA ADVENTISTA DEL SEPTIMO DIA', 'AV NICOLAS AYLLON 200', 'Chaclacayo', 'OSCAR VASQUEZ', 'Bladimiro Quispe Alfaro', '05-nov-2015', 'NOVIEMBRE', NULL),
 (183, '1406365.0', 'Proyectos Especiales', 'LO SA VIAL', 'JUNTA DE PROPIETARIOS DE PLAYA TRES ISLAS', 'CRR PANAMERICANA SUR KM 70.5 SUBLT 2', 'San Antonio', 'OSCAR VASQUEZ', 'Edwin Martinez Davila', '15-sep-2015', 'SEPTIEMBRE', NULL),
-(184, '1414548.0', 'Proyectos Especiales', 'COTECON', 'ENERSUR S.A .', 'CRR CAMINO A SANTO DOMINGO DE LOS OLLEROS SN', 'Chilca', 'OSCAR VASQUEZ', 'JPAR', '28-oct-2015', 'OCTUBRE', '../../images/es_757.jpg'),
+(184, '1414548.0', 'Proyectos Especiales', 'COTECON', 'ENERSUR S.A .', 'CRR CAMINO A SANTO DOMINGO DE LOS OLLEROS SN', 'Chilca', 'OSCAR VASQUEZ', 'JPAR', '28-oct-2015', 'OCTUBRE', NULL),
 (185, '1338048.0', 'Proyectos MT', 'OBJ', 'NEGOCIOS JORDI S.R.L', 'MZ E LT 21B LOT EL CLUB- PRIMERA ETAPA', 'Lurigancho-Chosica', 'OSCAR VASQUEZ', 'Bladimiro Quispe Alfaro', '22-sep-2015', 'SEPTIEMBRE', NULL),
 (186, '1430655.0', 'Proyectos Especiales', 'COTECON', 'LUZ DEL SUR - FLORES ROJAS BENJAMIN', 'MZ C LT 22A AH VILLA LIMATAMBO', 'Villa Maria Del Triunfo', 'OSCAR VASQUEZ', 'JPAR', '28-sep-2015', 'SEPTIEMBRE', NULL),
 (187, '1408123.0', 'Proyectos MT', 'ORION', 'INMOBILIARIA HABILITA S.A.C.', 'AV COMANDANTE ESPINAR 1136 - 1150 URB CHACARI', 'San Isidro', 'OSCAR VASQUEZ', 'Ricardo Porcel Mesones', '29-sep-2015', 'SEPTIEMBRE', NULL),
@@ -381,6 +381,33 @@ INSERT INTO `map` (`idMap`, `solicitud`, `actividad`, `nombreContratista`, `clie
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `modulo`
+--
+
+CREATE TABLE IF NOT EXISTS `modulo` (
+`idmodulo` int(11) NOT NULL,
+  `idmodulopadre` int(11) DEFAULT NULL,
+  `objeto` varchar(200) DEFAULT NULL,
+  `recurso` varchar(200) DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `dependencia` bit(1) DEFAULT NULL,
+  `estado` bit(1) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `modulo`
+--
+
+INSERT INTO `modulo` (`idmodulo`, `idmodulopadre`, `objeto`, `recurso`, `descripcion`, `dependencia`, `estado`) VALUES
+(1, 0, 'Dashboard', 'Dashboard', 'Panel de Control', b'0', b'1'),
+(2, 0, 'Mapa', 'Mapa', 'Mapa', b'0', b'1'),
+(3, 0, 'Reporte', 'Reporte', 'Reporte', b'0', b'1'),
+(4, 0, 'Usuarios', 'Usuarios', 'Usuarios', b'0', b'1'),
+(5, 0, 'Modulos', 'Modulos', 'Modulos', b'0', b'1');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `perfil`
 --
 
@@ -402,6 +429,29 @@ INSERT INTO `perfil` (`idperfil`, `nombre`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `perfilmodulo`
+--
+
+CREATE TABLE IF NOT EXISTS `perfilmodulo` (
+  `idmodulo` int(11) NOT NULL DEFAULT '0',
+  `idperfil` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `perfilmodulo`
+--
+
+INSERT INTO `perfilmodulo` (`idmodulo`, `idperfil`) VALUES
+(1, 2),
+(1, 3),
+(2, 2),
+(2, 3),
+(3, 3),
+(4, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `perfilusuario`
 --
 
@@ -419,10 +469,12 @@ INSERT INTO `perfilusuario` (`idperfil`, `idusuario`) VALUES
 (1, 2),
 (1, 4),
 (1, 7),
+(1, 8),
 (2, 1),
 (2, 2),
 (2, 3),
 (2, 4),
+(2, 8),
 (3, 1),
 (3, 4),
 (3, 7);
@@ -533,10 +585,22 @@ ALTER TABLE `map`
  ADD PRIMARY KEY (`idMap`);
 
 --
+-- Indices de la tabla `modulo`
+--
+ALTER TABLE `modulo`
+ ADD PRIMARY KEY (`idmodulo`);
+
+--
 -- Indices de la tabla `perfil`
 --
 ALTER TABLE `perfil`
  ADD PRIMARY KEY (`idperfil`);
+
+--
+-- Indices de la tabla `perfilmodulo`
+--
+ALTER TABLE `perfilmodulo`
+ ADD PRIMARY KEY (`idmodulo`,`idperfil`);
 
 --
 -- Indices de la tabla `perfilusuario`
@@ -586,6 +650,11 @@ MODIFY `idlugar` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `map`
 MODIFY `idMap` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=240;
+--
+-- AUTO_INCREMENT de la tabla `modulo`
+--
+ALTER TABLE `modulo`
+MODIFY `idmodulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `perfil`
 --
