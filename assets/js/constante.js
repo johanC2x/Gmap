@@ -84,3 +84,43 @@ function cerrarSesion() {
     }
   });
 }
+
+function obtenerModulosMenu(usuario){
+  var op = 1;
+  var menu = "";
+  $.ajax({
+    type:"POST",
+    data:{
+      op:op,
+      usuario:usuario
+    },
+    url:"../../../controller/ModuloController.php",
+    success:function(msg){
+      menu += '<div class="subnavbar">';
+        menu += '<div class="subnavbar-inner">';
+          menu += '<div class="container">';
+            menu += '<ul class="mainnav">';
+              menu += msg.toString();
+            menu += '</ul>';
+            menu += '<ul class="nav navbar-nav navbar-right">';
+              menu += '<li class="dropdown" ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">';
+                menu += '<i class="fa fa-cogs"></i><span>Configuración</span><b class="caret"></b></a>';
+                  menu += '<ul class="dropdown-menu navbar-right">';
+                    menu += '<li><a href="#">Configuración</a></li>';
+                    menu += '<li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>';
+                  menu += '</ul>';
+              menu += '</li>';
+              menu += '<li class="dropdown" ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">';
+                menu += '<i class="fa fa-user"></i><span style="color:red;"><b>'+usuario+'</b></span>';
+                menu += '<b class="caret"></b></a>';
+              menu += '</li>';
+            menu += '</ul>';
+
+          menu += '</div>';
+        menu += '</div>';
+      menu += '</div>';
+      $("#menu").html(menu);
+      $("#Dashboard").addClass("active");
+    }
+  });
+}

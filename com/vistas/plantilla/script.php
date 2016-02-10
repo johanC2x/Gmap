@@ -23,3 +23,6 @@
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw" type="text/javascript"></script>
 <!--<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>-->
 <!--<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>-->
+<script type="text/javascript">
+	obtenerModulosMenu(<?php echo "'".$usuario."'"; ?>);
+</script>
